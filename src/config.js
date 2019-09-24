@@ -31,9 +31,6 @@ const config = process.env.NOW_GITHUB_COMMIT_REF === 'master' ? prod : dev;
 
 export default {
   // Add common config values here
-  file: {
-    allowedFileTypes: ['image/png', 'image/jpeg'],
-    allowedFileSize: 10485760,
-  },
+  placeholder: {},
   ...config,
 };
