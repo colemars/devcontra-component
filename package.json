@@ -1,6 +1,6 @@
 {
   "name": "devcontra-component",
-  "version": "0.0.6",
+  "version": "0.0.20",
   "description": "Activity Calendar",
   "main": "dist/index.js",
   "peerDependencies": {
@@ -12,6 +12,8 @@
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "aws-amplify": "^1.1.38",
+    "d3-layout-timeline-api": "^1.0.7",
+    "moment": "^2.24.0",
     "prop-types": "^15.7.2",
     "webpack": "^4.39.3"
   },
