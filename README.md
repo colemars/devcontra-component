@@ -130,7 +130,6 @@ The future plans and high priority features and enhancements can be found [here]
 
 ## Utilizes
 
-
 [<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" width="100">](https://github.com/)
 
 GitHub's beta API allows for easy data fatching for repo activity history.
@@ -166,6 +165,12 @@ ZEIT Now offers a great solution for site hosting.
 [<img src="https://seeklogo.com/images/N/next-js-logo-7929BCD36F-seeklogo.com.png" width="150">](https://nextjs.org/)
 
 NEXT.js is a React Framework that offers a great server side rendering solution.
+
+## Other Repos
+
+[DevContra Client](https://github.com/colemars/devcontra-client)
+
+[DevContra API](https://github.com/colemars/devcontra-api)
 
 
 ## License
