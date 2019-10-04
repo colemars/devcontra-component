@@ -1,6 +1,6 @@
 {
   "name": "devcontra-component",
-  "version": "0.0.236",
+  "version": "0.0.240",
   "description": "Activity Calendar",
   "main": "dist/index.js",
   "peerDependencies": {
