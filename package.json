@@ -1,6 +1,7 @@
 {
   "name": "devcontra",
-  "version": "0.0.12",
+  "version": "0.0.13",
+  "license" : "MIT",
   "description": "Dev Activity Timeline",
   "main": "dist/index.js",
   "peerDependencies": {
