@@ -1,4 +1,4 @@
-import Amplify from 'aws-amplify';
+import Amplify, { Auth } from 'aws-amplify';
 import config from './config';
 
 export default async function configureAmplify() {
@@ -20,4 +20,6 @@ export default async function configureAmplify() {
       ],
     },
   });
+  await Auth.currentCredentials();
+  console.log(Auth);
 }
