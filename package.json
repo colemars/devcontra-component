@@ -1,6 +1,6 @@
 {
   "name": "devcontra",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "license" : "MIT",
   "description": "Dev Activity Timeline",
   "main": "dist/index.js",
