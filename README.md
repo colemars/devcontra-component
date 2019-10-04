@@ -172,6 +172,8 @@ NEXT.js is a React Framework that offers a great server side rendering solution.
 
 [DevContra API](https://github.com/colemars/devcontra-api)
 
+[d3-layout-timeline-api](https://github.com/colemars/d3-layout-timeline-api) - I'm in the process of updating this layout with the latest d3 and react conventions. Any help would be appreciated!
+
 
 ## License
 
