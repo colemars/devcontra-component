@@ -1,7 +1,7 @@
 {
-  "name": "devcontra-component",
-  "version": "0.0.245",
-  "description": "Activity Calendar",
+  "name": "devcontra",
+  "version": "0.0.1",
+  "description": "Dev Activity Timeline",
   "main": "dist/index.js",
   "peerDependencies": {
     "react": "^16.8.0"
