@@ -8,16 +8,16 @@ import configureAmplify from './amplify';
 import Timeline from './timeline';
 
 const DevContra = props => {
-  const { accessKey, determinedMax, diameter, padding } = props;
+  const { profileKey, determinedMax, diameter, padding } = props;
   const [data, setData] = useState(null);
 
   useEffect(() => {
     async function getData() {
       try {
         const apiName = 'contra';
-        const stackPath = `/profile/stackoverflow/${accessKey}`;
-        const gitPath = `/profile/github/${accessKey}`;
-        const twitterPath = `/profile/twitter/${accessKey}`;
+        const stackPath = `/profile/stackoverflow/${profileKey}`;
+        const gitPath = `/profile/github/${profileKey}`;
+        const twitterPath = `/profile/twitter/${profileKey}`;
         const [stackOverflow, github, twitter] = await Promise.all([
           API.get(apiName, stackPath),
           API.get(apiName, gitPath),
@@ -35,7 +35,7 @@ const DevContra = props => {
     }
     async function InitWithAuth() {
       configureAmplify();
-      const { result, error } = await getData(accessKey);
+      const { result, error } = await getData(profileKey);
       if (error) {
         console.log(error);
         return;
@@ -66,7 +66,7 @@ DevContra.defaultProps = {
 };
 
 DevContra.propTypes = {
-  accessKey: PropTypes.string.isRequired,
+  profileKey: PropTypes.string.isRequired,
   diameter: PropTypes.number,
   padding: PropTypes.number,
   determinedMax: PropTypes.number,
