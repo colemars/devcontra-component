@@ -27,7 +27,6 @@ const DevContra = props => {
           result: { stackOverflow, github, twitter },
         };
       } catch (err) {
-        console.log(err);
         return {
           error: err,
         };
