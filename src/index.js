@@ -37,7 +37,7 @@ const DevContra = props => {
       configureAmplify();
       const { result, error } = await getData(profileKey);
       if (error) {
-        console.log(error);
+        console.log(error.response.data);
         return;
       }
       setData(result);
