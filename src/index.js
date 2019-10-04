@@ -32,8 +32,9 @@ const DevContra = props => {
         };
       }
     }
-    async function InitWithAuth() {
+    async function init() {
       configureAmplify();
+      console.log('here', API);
       const { result, error } = await getData(profileKey);
       if (error) {
         console.log(error.response.data);
@@ -41,7 +42,7 @@ const DevContra = props => {
       }
       setData(result);
     }
-    InitWithAuth();
+    init();
   }, []);
 
   return (
