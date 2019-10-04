@@ -4,7 +4,7 @@ import config from './config';
 export default async function configureAmplify() {
   Amplify.configure({
     Auth: {
-      mandatorySignIn: true,
+      mandatorySignIn: false,
       region: config.cognito.REGION,
       userPoolId: config.cognito.USER_POOL_ID,
       identityPoolId: config.cognito.IDENTITY_POOL_ID,
