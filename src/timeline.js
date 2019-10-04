@@ -15,14 +15,14 @@ const Timeline = props => {
     github: '#24292E',
   };
 
-  const newDummyStack = new Map();
+  const dataMap = new Map();
   for (let i = 16; i >= 0; i -= 1) {
     const weekStart = now
       .clone()
       .subtract(i, 'weeks')
       .startOf('week')
       .unix();
-    newDummyStack.set(weekStart, {
+    dataMap.set(weekStart, {
       children: [
         { platform: 'stackoverflow', s: 0, e: 0 },
         { platform: 'github', s: 0, e: 0 },
@@ -36,7 +36,7 @@ const Timeline = props => {
     const value = platform[1];
     value.map(item => {
       const { activityDate, variant } = item;
-      const newVal = newDummyStack.get(activityDate);
+      const newVal = dataMap.get(activityDate);
       if (!newVal) return item;
       newVal.children.forEach((child, i) => {
         if (child.platform === variant) {
@@ -55,18 +55,18 @@ const Timeline = props => {
           } else child.e += 1;
         }
       });
-      newDummyStack.set(activityDate, newVal);
+      dataMap.set(activityDate, newVal);
       return item;
     });
   }
 
-  const newDummyData = [];
-  for (const item of newDummyStack.values()) {
-    newDummyData.push(item);
+  const formattedData = [];
+  for (const item of dataMap.values()) {
+    formattedData.push(item);
   }
 
   let overallMax = 0;
-  newDummyData.forEach(item => {
+  formattedData.forEach(item => {
     let localMax = 0;
     item.children.forEach(val => {
       if (val.e > localMax) {
@@ -101,7 +101,7 @@ const Timeline = props => {
   const domain = determinedMax || relativeMax;
   const addData = () => {
     const arc = d3.svg.arc();
-    const timelineBands = timeline(newDummyStack);
+    const timelineBands = timeline(dataMap);
     const angleScale = d3.scale
       .linear()
       // determines how extent scales...
@@ -114,7 +114,8 @@ const Timeline = props => {
       d.y += 30;
     });
 
-    d3.select('svg')
+    d3.select('div.devcontra')
+      .select('svg')
       .selectAll('path')
       .data(timelineBands)
       .enter()
@@ -127,7 +128,9 @@ const Timeline = props => {
 
     const size = timelineBands.length;
 
-    d3.selectAll('path')
+    d3.select('div.devcontra')
+      .select('svg')
+      .selectAll('path')
       .transition()
       .duration(400)
       .attr('d', d => {
@@ -156,7 +159,11 @@ const Timeline = props => {
     addData();
   });
 
-  return <svg height={diameter} width={diameter} />;
+  return (
+    <div className="devcontra">
+      <svg height={diameter} width={diameter} />
+    </div>
+  );
 };
 
 Timeline.propTypes = {
