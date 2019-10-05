@@ -26,8 +26,8 @@ const prod = {
   },
 };
 
-// Default to dev if not set
-const config = process.env.STAGE === 'master' ? prod : dev;
+// Default to prod if not set
+const config = process.env.STAGE === 'dev' ? dev : prod;
 
 export default {
   // Add common config values here
